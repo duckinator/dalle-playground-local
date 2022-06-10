@@ -1,5 +1,11 @@
 # dalle-playground-local
 
+Install dependencies and useful utilities (Fedora):
+
+```
+$ dnf install tmux git python3-pip npm make htop
+```
+
 First, clone the repo:
 
 ```
