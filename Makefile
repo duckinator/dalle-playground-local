@@ -3,7 +3,7 @@ all: mini
 setup:
 	(test -d dalle-playground || git clone https://github.com/saharmor/dalle-playground.git)
 	pip install -r dalle-playground/backend/requirements.txt
-	(cd dalle-playground/interface && npm install && npm run build)
+	#(cd dalle-playground/interface && npm install && npm run build)
 
 run-backend: dalle-playground
 	python dalle-playground/backend/app.py 8000 $dalle_model	
@@ -17,8 +17,8 @@ mega: dalle-playground
 mega-full: dalle-playground
 	$(MAKE) dalle_model=Mega_full run-backend
 
-frontend: dalle-playground
-	(cd interface && npm run start)
+#frontend: dalle-playground
+#	(cd interface && npm run start)
 
 clean:
 	rm -rf dalle-playground
