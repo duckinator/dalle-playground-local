@@ -8,16 +8,19 @@ dalle-playground:
 run-backend: dalle-playground
 	python dalle-playground/backend/app.py 8000 $dalle_model	
 
-mini:
+mini: dalle-playground
 	$(MAKE) dalle_model=Mini run-backend
 
-mega:
+mega: dalle-playground
 	$(MAKE) dalle_model=Mega run-backend
 
-mega-full:
+mega-full: dalle-playground
 	$(MAKE) dalle_model=Mega_full run-backend
 
-frontend:
+frontend: dalle-playground
 	(cd interface && npm run start)
+
+clean:
+	rm -rf dalle-playground
 
 .PHONY: run-backend mini mega mega-full
