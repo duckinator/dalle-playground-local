@@ -3,7 +3,7 @@ all: mini
 dalle-playground:
 	git clone https://github.com/saharmor/dalle-playground.git
 	pip install -r dalle-playground/backend/requirements.txt
-	(cd interface && npm install && npm run build)
+	(cd dalle-playground/interface && npm install && npm run build)
 
 run-backend: dalle-playground
 	python dalle-playground/backend/app.py 8000 $dalle_model	
