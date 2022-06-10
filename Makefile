@@ -6,7 +6,7 @@ setup:
 	#(cd dalle-playground/interface && npm install && npm run build)
 
 run-backend: dalle-playground
-	python dalle-playground/backend/app.py 8000 $dalle_model	
+	python dalle-playground/backend/app.py 8000 ${dalle_model}
 
 mini: dalle-playground
 	$(MAKE) dalle_model=Mini run-backend
