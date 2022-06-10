@@ -1,7 +1,7 @@
 all: mini
 
 setup:
-	(test -f dalle-playground || git clone https://github.com/saharmor/dalle-playground.git)
+	(test -d dalle-playground || git clone https://github.com/saharmor/dalle-playground.git)
 	pip install -r dalle-playground/backend/requirements.txt
 	(cd dalle-playground/interface && npm install && npm run build)
 
