@@ -1,7 +1,7 @@
 all: mini
 
-dalle-playground:
-	git clone https://github.com/saharmor/dalle-playground.git
+setup:
+	(test -f dalle-playground || git clone https://github.com/saharmor/dalle-playground.git)
 	pip install -r dalle-playground/backend/requirements.txt
 	(cd dalle-playground/interface && npm install && npm run build)
 
@@ -23,4 +23,4 @@ frontend: dalle-playground
 clean:
 	rm -rf dalle-playground
 
-.PHONY: run-backend mini mega mega-full
+.PHONY: setup run-backend mini mega mega-full
